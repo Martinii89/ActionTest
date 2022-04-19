@@ -32,6 +32,4 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: true
           title: "Development Build"
-          files: |
-            LICENSE.txt
-            **.exe
+          files: ActionTest/bin/Release/net6.0/win-x64/publish/*.exe
