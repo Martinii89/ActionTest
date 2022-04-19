@@ -1,9 +1,9 @@
-name: "pre-release"
+name: "tagged-release"
 
 on:
   push:
-    branches:
-      - "master"
+    tags:
+      - "v*"
 
 env:
   PROJECT_FOLDER: ActionTest
@@ -29,7 +29,6 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
+          prerelease: false
           title: "Development Build"
           files: ActionTest/bin/Release/net6.0/win-x64/publish/*.exe
