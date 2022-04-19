@@ -37,10 +37,10 @@ jobs:
       - uses: csexton/release-asset-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: ${{ PROJECT_FOLDER }}/bin/Release/net6.0/win-x64/publish/publish/*.exe
+          pattern: ${{ env.PROJECT_FOLDER }}/bin/Release/net6.0/win-x64/publish/publish/*.exe
           release-url: ${{ steps.create_release.outputs.upload_url }}
       - uses: csexton/release-asset-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: ${{ PROJECT_FOLDER2 }}/bin/Release/net6.0/win-x64/publish/publish/*.exe
+          pattern: ${{ env.PROJECT_FOLDER2 }}/bin/Release/net6.0/win-x64/publish/publish/*.exe
           release-url: ${{ steps.create_release.outputs.upload_url }}
